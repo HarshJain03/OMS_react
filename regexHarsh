@@ -1,0 +1,52 @@
+EMAIL REGEX by HARSH:-
+
+ var emailReg =
+    /^([a-zA-Z\d\.-]+)@([a-zA-Z\.-]+)\.([a-zA-Z]{2,8})([a-zA-Z]{2,8})?$/;
+
+if (!req.body.email.match(emailReg)) {
+    res.send({
+      status: false,
+      message: "Please enter a valid email",
+      data: {},
+    });
+    return;
+  }
+
+
+ONLY NUMERIC :-
+
+  var regexNum = "^[0-9]*$";
+
+if (!req.body.number.match(regexNum)) {
+    return res.send({
+      status: false,
+      message: "Please enter only numeric value",
+      data: {},
+    });
+  }
+
+  if (req.body.number.length > 10) {
+    return res.send({
+      status: false,
+      message: "Mobile number should not be more than 10 digits",
+      data: {},
+    });
+  }
+  if (req.body.number.length < 10) {
+    return res.send({
+      status: false,
+      message: "Mobile number should be 10 digits",
+      data: {},
+    });
+  }
+
+PASSWORD:-
+
+  var regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
+
+   if (!password.match(regex)) {
+      setErrorMsgPassword(
+        "Password must be at least 8 characters long, contains an upper case letter, a lower case letter, a number, and a symbol"
+      );
+      return false;
+    }
