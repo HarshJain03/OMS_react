@@ -50,3 +50,21 @@ PASSWORD:-
       );
       return false;
     }
+
+
+
+ZIPCODE:-
+
+let value = await event.target.value.trim();
+    if (!value) {
+      setErrorZipcode("Please enter zipcode");
+      setZipcode(value);
+      return false;
+    }
+
+  var regex = /(?!\s*$)[-a-zA-Z0-9_:,.\s]{1,100}$/;
+    if (!value.match(regex)) {
+      setErrorZipcode("Please enter valid input");
+      setZipcode(value);
+      return false;
+    }
